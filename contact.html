@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact — Mavèn Studio</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border-bottom:.5px solid var(--border)}
+.cg-l{background:var(--ob);padding:100px 64px}
+.cg-r{background:var(--charcoal);padding:100px 64px}
+.ci{margin-top:52px;display:flex;flex-direction:column;gap:28px}
+.ci-item{}
+.ci-lbl{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.ci-val{font-size:15px;color:var(--ivory);line-height:1.6}
+.ci-val a{color:var(--ivory);text-decoration:none;border-bottom:.5px solid transparent;transition:border-color .2s}
+.ci-val a:hover{border-bottom-color:var(--gold)}
+.cf{display:flex;flex-direction:column;gap:20px}
+.fg{display:flex;flex-direction:column;gap:7px}
+.fl{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--stone)}
+.fi{background:rgba(200,169,110,.04);border:.5px solid var(--border);color:var(--ivory);padding:13px 16px;font-size:14px;font-family:'DM Sans',sans-serif;font-weight:300;outline:none;transition:border-color .25s;width:100%;border-radius:0}
+.fi:focus{border-color:var(--gold)}
+.fi::placeholder{color:#555}
+textarea.fi{min-height:120px;resize:vertical}
+select.fi option{background:var(--ob)}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.f-sub{width:100%;background:var(--gold);color:var(--ob);padding:15px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;font-family:'DM Sans',sans-serif;border:none;cursor:none;position:relative;overflow:hidden;transition:opacity .2s}
+.f-sub::before{content:'';position:absolute;inset:0;background:var(--ivory);transform:scaleX(0);transform-origin:right;transition:transform .4s cubic-bezier(.76,0,.24,1)}
+.f-sub:hover::before{transform:scaleX(1)}
+.f-sub span{position:relative;z-index:1}
+.map{height:50vh;position:relative;overflow:hidden;border-bottom:.5px solid var(--border)}
+.map img{filter:brightness(.35) grayscale(.5);transition:transform 8s ease}
+.map.in img{transform:scale(1.04)}
+.map::after{content:'';position:absolute;inset:0;background:rgba(8,8,8,.3)}
+.map-pin{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;text-align:center}
+.map-dot{width:12px;height:12px;background:var(--gold);border-radius:50%;margin:0 auto 10px;box-shadow:0 0 0 6px rgba(200,169,110,.2)}
+.map-label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ivory);background:rgba(8,8,8,.7);padding:6px 14px;backdrop-filter:blur(8px)}
+.off{padding:100px 64px;border-bottom:.5px solid var(--border)}
+.off-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:64px}
+.oc{background:var(--ob);padding:48px 36px;transition:background .4s}
+.oc:hover{background:var(--charcoal)}
+.oc-status{font-size:9px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px;display:inline-block;padding:3px 10px}
+.oc-status.active{color:var(--gold);background:rgba(200,169,110,.08)}
+.oc-status.soon{color:var(--stone);background:rgba(136,135,128,.08)}
+.oc-city{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:500;letter-spacing:-.02em;margin-bottom:16px}
+.oc-det{font-size:13px;color:var(--stone);line-height:1.8}
+.oc-det a{color:var(--stone);text-decoration:none;transition:color .2s}
+.oc-det a:hover{color:var(--ivory)}
+.faq{padding:100px 64px;border-bottom:.5px solid var(--border)}
+.faq-list{margin-top:60px}
+.faq-item{border-bottom:.5px solid var(--border);cursor:pointer}
+.faq-q{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0}
+.faq-qt{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:-.01em;color:var(--ivory)}
+.faq-ic{font-size:20px;color:var(--gold);transition:transform .35s;flex-shrink:0}
+.faq-item.op .faq-ic{transform:rotate(45deg)}
+.faq-a{font-size:14px;color:var(--stone);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;padding-bottom:0}
+.faq-item.op .faq-a{max-height:200px;padding-bottom:24px}
+@media(max-width:900px){
+  .cg{grid-template-columns:1fr}
+  .cg-l,.cg-r{padding:60px 24px}
+  .f2{grid-template-columns:1fr}
+  .off{padding:60px 24px}
+  .off-grid{grid-template-columns:1fr}
+  .faq{padding:60px 24px}
+}
+</style>
+</head>
+<body>
+<div class="pt"></div>
+<div id="cur"></div><div id="ring"></div>
+<nav>
+  <a href="index.html" class="nl">mav<span class="e">è</span>n<sub>studio</sub></a>
+  <ul class="nv"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="work.html">Work</a></li><li><a href="contact.html" class="on">Contact</a></li></ul>
+  <a href="contact.html" class="nc"><span>Start a project</span></a>
+  <button class="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mm"><a href="index.html">Home</a><a href="services.html">Services</a><a href="work.html">Work</a><a href="contact.html">Contact</a></div>
+
+<section class="ph">
+  <div class="ph-bg" id="phBg">
+    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1800&q=80" alt="Agency team" loading="eager">
+  </div>
+  <div class="ph-c">
+    <p class="ph-eye"><span>Get in touch</span></p>
+    <h1 class="ph-t">
+      <span class="ln"><span class="wd">Let's build</span></span>
+      <span class="ln"><span class="wd">something</span></span>
+      <span class="ln"><span class="wd"><em>unmissable.</em></span></span>
+    </h1>
+    <p class="ph-d">We take on a limited number of new clients each quarter. Tell us about your brand and let's see if we're the right fit.</p>
+  </div>
+</section>
+
+<div class="cg">
+  <div class="cg-l sr">
+    <p class="eye">The details</p>
+    <h2 class="big" style="font-size:clamp(28px,3.5vw,44px);margin-bottom:8px">We'd love to hear<br>from you.</h2>
+    <div class="ci">
+      <div class="ci-item"><p class="ci-lbl">Email us</p><p class="ci-val"><a href="mailto:support@mavenstudio.agency">support@mavenstudio.agency</a></p></div>
+      <div class="ci-item"><p class="ci-lbl">Call us</p><p class="ci-val"><a href="tel:+918274440987">+91 82744 40987</a></p></div>
+      <div class="ci-item"><p class="ci-lbl">Find us</p><p class="ci-val">DLF Phase 3<br>Gurugram — 122001, India</p></div>
+      <div class="ci-item"><p class="ci-lbl">Follow us</p><p class="ci-val"><a href="#" style="display:block;margin-bottom:4px">Instagram → @mavenstudio</a><a href="#">LinkedIn → Mavèn Studio</a></p></div>
+      <div class="ci-item"><p class="ci-lbl">Working hours</p><p class="ci-val">Monday – Friday: 10am – 7pm IST<br><span style="font-size:13px;color:var(--stone)">We respond within 24 hours.</span></p></div>
+    </div>
+  </div>
+  <div class="cg-r sr">
+    <p class="eye">Start a project</p>
+    <h2 class="big" style="font-size:clamp(28px,3.5vw,44px);margin-bottom:32px">Tell us about<br>your brand.</h2>
+    <form class="cf" onsubmit="handleSub(event)">
+      <div class="f2">
+        <div class="fg"><label class="fl">Your name</label><input type="text" class="fi" placeholder="Arjun Mehta" required></div>
+        <div class="fg"><label class="fl">Brand / Company</label><input type="text" class="fi" placeholder="Arya Skincare" required></div>
+      </div>
+      <div class="fg"><label class="fl">Email address</label><input type="email" class="fi" placeholder="hello@yourbrand.co" required></div>
+      <div class="fg"><label class="fl">Service needed</label>
+        <select class="fi"><option value="" disabled selected>Select a service</option><option>Content Creation (CGI/AR)</option><option>Performance Marketing</option><option>Design & Branding</option><option>Social Media</option><option>Web Development</option><option>Influencer Marketing</option><option>Full-service partnership</option></select>
+      </div>
+      <div class="fg"><label class="fl">Monthly budget</label>
+        <select class="fi"><option value="" disabled selected>Select a range</option><option>₹15,000 – ₹30,000</option><option>₹30,000 – ₹75,000</option><option>₹75,000 – ₹1,50,000</option><option>₹1,50,000+</option></select>
+      </div>
+      <div class="fg"><label class="fl">Tell us about your brand</label><textarea class="fi" placeholder="What does your brand do, who is your audience, what are you trying to achieve?" required></textarea></div>
+      <button type="submit" class="f-sub" id="fsub"><span>Send message →</span></button>
+    </form>
+  </div>
+</div>
+
+<div class="map ss" id="mapEl">
+  <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?w=1800&q=60" alt="Gurugram" loading="lazy">
+  <div class="map-pin"><div class="map-dot"></div><div class="map-label">MAVÈN STUDIO · DLF PHASE 3, GURUGRAM</div></div>
+</div>
+
+<section class="off">
+  <div class="sr"><p class="eye">Where we are</p><h2 class="big">Based in NCR.<br>Working <em>everywhere.</em></h2></div>
+  <div class="off-grid sr">
+    <div class="oc"><span class="oc-status active">Headquarters</span><h3 class="oc-city">Gurugram</h3><p class="oc-det">DLF Phase 3<br>Gurugram — 122001<br><br><a href="tel:+918274440987">+91 82744 40987</a><br><a href="mailto:support@mavenstudio.agency">support@mavenstudio.agency</a></p></div>
+    <div class="oc"><span class="oc-status soon">Remote</span><h3 class="oc-city">Hyderabad</h3><p class="oc-det">Serving clients across<br>Hyderabad<br><br>Remote team available<br><a href="mailto:support@mavenstudio.agency">support@mavenstudio.agency</a></p></div>
+    <div class="oc"><span class="oc-status soon">Remote</span><h3 class="oc-city">Bengaluru</h3><p class="oc-det">Serving clients across<br>Karnataka & South India<br><br>Remote team available<br><a href="mailto:support@mavenstudio.agency">support@mavenstudio.agency</a></p></div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="sr"><p class="eye">Questions</p><h2 class="big">Things people<br><em>usually ask us.</em></h2></div>
+  <div class="faq-list sr">
+    <div class="faq-item" data-hover><div class="faq-q"><p class="faq-qt">What is your minimum engagement period?</p><span class="faq-ic">+</span></div><p class="faq-a">Our minimum engagement for retainer services is 3 months. Project-based work like websites or brand identity has no minimum term.</p></div>
+    <div class="faq-item" data-hover><div class="faq-q"><p class="faq-qt">How quickly can you get started?</p><span class="faq-ic">+</span></div><p class="faq-a">Once we've agreed on scope and received your onboarding payment, we typically begin within 48–72 hours. First campaigns can go live within the first week.</p></div>
+    <div class="faq-item" data-hover><div class="faq-q"><p class="faq-qt">Is ad spend included in your pricing?</p><span class="faq-ic">+</span></div><p class="faq-a">No — ad spend is billed separately and passed through at cost. We never mark up media spend. Our fee covers strategy, management, creative, and reporting only.</p></div>
+    <div class="faq-item" data-hover><div class="faq-q"><p class="faq-qt">Do you work with brands outside India?</p><span class="faq-ic">+</span></div><p class="faq-a">Yes — we work with brands across India, the UAE, and Southeast Asia. Our team is remote-friendly and has experience running multi-market campaigns simultaneously.</p></div>
+    <div class="faq-item" data-hover><div class="faq-q"><p class="faq-qt">What makes Mavèn Studio different?</p><span class="faq-ic">+</span></div><p class="faq-a">We are genuinely full-service — not a performance agency that outsources design, or a design agency that doesn't understand ads. Every service is in-house, which means faster turnaround, better integration, and one consistent voice across everything we build.</p></div>
+    <div class="faq-item" data-hover><div class="faq-q"><p class="faq-qt">How do you report on results?</p><span class="faq-ic">+</span></div><p class="faq-a">Every client receives a custom monthly report covering the metrics that matter — ROAS, CPL, organic growth, conversions. We also offer weekly check-in calls for retainer clients.</p></div>
+  </div>
+</section>
+
+<section class="ctas">
+  <p class="eye sr">Still have questions?</p>
+  <h2 class="ct-t sr">Just send us<br>a <em>message.</em></h2>
+  <p class="ct-s sr">We respond to every enquiry within 24 hours. No sales scripts, no pressure.</p>
+  <div class="ct-b sr"><div class="mg"><a href="mailto:support@mavenstudio.agency" class="mgi">Email us directly</a></div><a href="work.html" class="bl">See our work →</a></div>
+</section>
+
+<footer><div class="ft">
+  <div><div class="f-logo">mav<span class="e">è</span>n</div><p class="f-tag">Expertise that moves brands.<br>Gurugram, India.</p></div>
+  <div><p class="fc-t">Services</p><ul class="fc-l"><li><a href="services.html">Content Creation (CGI/AR)</a></li><li><a href="services.html">Performance Marketing</a></li><li><a href="services.html">Design & Branding</a></li><li><a href="services.html">Social Media</a></li><li><a href="services.html">Web Development</a></li><li><a href="services.html">Influencer Marketing</a></li></ul></div>
+  <div><p class="fc-t">Company</p><ul class="fc-l"><li><a href="index.html">Home</a></li><li><a href="work.html">Work</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+  <div><p class="fc-t">Contact</p><ul class="fc-l"><li><a href="mailto:support@mavenstudio.agency">support@mavenstudio.agency</a></li><li><a href="#">+91 82744 40987</a></li><li><a href="#">Gurugram, India</a></li><li style="margin-top:12px"><a href="https://www.instagram.com/mavenstudio.in?igsh=MWtldndzcnVnZWVmcg%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a></li><li><a href="#">LinkedIn</a></li></ul></div>
+</div><div class="fb"><p class="fb-c">© <span id="yr"></span> Mavèn Studio.</p><div class="fb-s"><a href="https://www.instagram.com/mavenstudio.in?igsh=MWtldndzcnVnZWVmcg%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a><a href="#">LinkedIn</a></div></div></footer>
+
+<script src="main.js"></script>
+<script>
+// FAQ
+document.querySelectorAll('.faq-item').forEach(item=>{
+  item.querySelector('.faq-q').addEventListener('click',()=>{
+    const op=item.classList.contains('op');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('op'));
+    if(!op)item.classList.add('op');
+  });
+});
+// form
+function handleSub(e){
+  e.preventDefault();
+  const btn=document.getElementById('fsub');
+  btn.querySelector('span').textContent='Message sent ✦';
+  btn.style.opacity='.7';btn.disabled=true;
+}
+// map
+const mapEl=document.getElementById('mapEl');
+new IntersectionObserver(e=>{if(e[0].isIntersecting)mapEl.classList.add('in')},{threshold:.1}).observe(mapEl);
+</script>
+</body>
+</html>

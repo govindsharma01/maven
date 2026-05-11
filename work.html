@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Our Work — Mavèn Studio</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.wf-filters{display:flex;gap:4px;padding:28px 64px;border-bottom:.5px solid var(--border);overflow-x:auto;scrollbar-width:none}
+.wf-btn{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);background:none;border:.5px solid var(--border);padding:10px 20px;cursor:none;transition:all .25s;font-family:'DM Sans',sans-serif;white-space:nowrap}
+.wf-btn:hover,.wf-btn.on{color:var(--ob);background:var(--gold);border-color:var(--gold)}
+.wf-grid{padding:60px 64px;display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);border-bottom:.5px solid var(--border)}
+.wf-item{background:var(--ob);overflow:hidden;cursor:pointer;position:relative;transition:background .3s}
+.wf-item:hover{background:var(--charcoal)}
+.wf-item.lg{grid-column:span 2}
+.wf-img{overflow:hidden}
+.wf-item .wf-img{height:300px}
+.wf-item.lg .wf-img{height:420px}
+.wf-img img{transition:transform .7s cubic-bezier(.76,0,.24,1),filter .5s;filter:brightness(.65)}
+.wf-item:hover .wf-img img{transform:scale(1.06);filter:brightness(.45)}
+.wf-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,8,.85) 0%,transparent 55%)}
+.wf-body{padding:28px 32px}
+.wf-cat{font-size:10px;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+.wf-nm{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;color:var(--ivory);letter-spacing:-.02em;margin-bottom:4px}
+.wf-sv{font-size:12px;color:var(--stone)}
+.wf-ar{position:absolute;top:20px;right:20px;font-size:16px;color:var(--gold);opacity:0;transition:opacity .3s}
+.wf-item:hover .wf-ar{opacity:1}
+.cs-strip{display:grid;grid-template-columns:1fr 1fr;min-height:70vh;border-bottom:.5px solid var(--border)}
+.cs-l{padding:100px 64px;display:flex;flex-direction:column;justify-content:center;border-right:.5px solid var(--border)}
+.cs-r{position:relative;overflow:hidden}
+.cs-r img{filter:brightness(.5);transition:transform .8s ease}
+.cs-r.in img{transform:scale(1.04)}
+.cs-r::after{content:'';position:absolute;inset:0;background:rgba(8,8,8,.2)}
+.cs-tag{font-size:10px;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px}
+.cs-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,52px);font-weight:400;letter-spacing:-.025em;margin-bottom:24px;line-height:1.1}
+.cs-title em{font-style:italic;color:var(--gold)}
+.cs-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin:32px 0}
+.cs-stat{background:var(--charcoal);padding:20px}
+.cs-sn{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--gold);line-height:1}
+.cs-sl{font-size:11px;color:var(--stone);margin-top:3px}
+@media(max-width:900px){
+  .wf-filters{padding:20px 24px}
+  .wf-grid{padding:40px 24px;grid-template-columns:1fr 1fr}
+  .wf-item.lg{grid-column:span 1}
+  .cs-strip{grid-template-columns:1fr}
+  .cs-l{padding:60px 24px}
+  .cs-r{height:280px}
+}
+</style>
+</head>
+<body>
+<div class="pt"></div>
+<div id="cur"></div><div id="ring"></div>
+<nav>
+  <a href="index.html" class="nl">mav<span class="e">è</span>n<sub>studio</sub></a>
+  <ul class="nv"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="work.html" class="on">Work</a></li><li><a href="contact.html">Contact</a></li></ul>
+  <a href="contact.html" class="nc"><span>Start a project</span></a>
+  <button class="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mm"><a href="index.html">Home</a><a href="services.html">Services</a><a href="work.html">Work</a><a href="contact.html">Contact</a></div>
+
+<section class="ph">
+  <div class="ph-bg" id="phBg">
+    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1800&q=80" alt="Our work" loading="eager">
+  </div>
+  <div class="ph-c">
+    <p class="ph-eye"><span>Selected work</span></p>
+    <h1 class="ph-t">
+      <span class="ln"><span class="wd">Results that</span></span>
+      <span class="ln"><span class="wd"><em>speak</em> for</span></span>
+      <span class="ln"><span class="wd">themselves.</span></span>
+    </h1>
+    <p class="ph-d">Every project here represents a brand that trusted us to build something that actually moves the needle.</p>
+  </div>
+</section>
+
+<div class="wf-filters">
+  <button class="wf-btn on" data-filter="all">All work</button>
+  <button class="wf-btn" data-filter="performance">Performance</button>
+  <button class="wf-btn" data-filter="design">Design & Branding</button>
+  <button class="wf-btn" data-filter="cgi">CGI / AR</button>
+  <button class="wf-btn" data-filter="social">Social Media</button>
+  <button class="wf-btn" data-filter="web">Web Development</button>
+  <button class="wf-btn" data-filter="influencer">Influencer</button>
+</div>
+
+<div class="wf-grid sr">
+  <div class="wf-item lg" data-hover data-cat="performance cgi design"><div class="wf-img"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=1000&q=80" alt="Arya Skincare" loading="lazy"></div><div class="wf-body"><p class="wf-cat">D2C · Performance + Design + CGI</p><h3 class="wf-nm">Arya Skincare</h3><p class="wf-sv">3× ROAS · Full rebrand · ₹2Cr revenue in 90 days</p></div><span class="wf-ar">↗</span></div>
+  <div class="wf-item" data-hover data-cat="social performance"><div class="wf-img"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80" alt="Noon Kitchen" loading="lazy"></div><div class="wf-body"><p class="wf-cat">Cloud Kitchen · Social + Performance</p><h3 class="wf-nm">Noon Kitchen</h3><p class="wf-sv">2× delivery orders in 60 days</p></div><span class="wf-ar">↗</span></div>
+  <div class="wf-item" data-hover data-cat="influencer performance"><div class="wf-img"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80" alt="Velvet Apparel" loading="lazy"></div><div class="wf-body"><p class="wf-cat">D2C Fashion · Influencer + Ads</p><h3 class="wf-nm">Velvet Apparel</h3><p class="wf-sv">4.2× ROAS · 80K new followers</p></div><span class="wf-ar">↗</span></div>
+  <div class="wf-item" data-hover data-cat="social influencer"><div class="wf-img"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Curo Restaurant" loading="lazy"></div><div class="wf-body"><p class="wf-cat">Fine Dining · Social + Influencer</p><h3 class="wf-nm">Curo Restaurant</h3><p class="wf-sv">Fully booked every weekend in 30 days</p></div><span class="wf-ar">↗</span></div>
+  <div class="wf-item lg" data-hover data-cat="cgi design web"><div class="wf-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1000&q=80" alt="Prism Labs" loading="lazy"></div><div class="wf-body"><p class="wf-cat">SaaS Startup · CGI + Web + Branding</p><h3 class="wf-nm">Prism Labs</h3><p class="wf-sv">Full brand identity + 3D product launch</p></div><span class="wf-ar">↗</span></div>
+  <div class="wf-item" data-hover data-cat="cgi influencer"><div class="wf-img"><img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=600&q=80" alt="Dew Beauty" loading="lazy"></div><div class="wf-body"><p class="wf-cat">Beauty D2C · CGI + Influencer</p><h3 class="wf-nm">Dew Beauty</h3><p class="wf-sv">CGI launch · 2.3M impressions</p></div><span class="wf-ar">↗</span></div>
+  <div class="wf-item" data-hover data-cat="social design"><div class="wf-img"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" alt="Ember Coffee" loading="lazy"></div><div class="wf-body"><p class="wf-cat">Café Chain · Social + Design</p><h3 class="wf-nm">Ember Coffee</h3><p class="wf-sv">Brand refresh · 3× social engagement</p></div><span class="wf-ar">↗</span></div>
+  <div class="wf-item" data-hover data-cat="web performance"><div class="wf-img"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&q=80" alt="Nova Fitness" loading="lazy"></div><div class="wf-body"><p class="wf-cat">Fitness · Performance + Web</p><h3 class="wf-nm">Nova Fitness</h3><p class="wf-sv">5× membership enquiries month-on-month</p></div><span class="wf-ar">↗</span></div>
+  <div class="wf-item" data-hover data-cat="web design"><div class="wf-img"><img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&q=80" alt="Loom Fashion" loading="lazy"></div><div class="wf-body"><p class="wf-cat">Fashion · Web + Branding</p><h3 class="wf-nm">Loom Fashion</h3><p class="wf-sv">E-commerce · 48% increase in conversions</p></div><span class="wf-ar">↗</span></div>
+</div>
+
+<!-- CASE STUDY HIGHLIGHT -->
+<section class="cs-strip">
+  <div class="cs-l sr">
+    <p class="cs-tag">Featured case study</p>
+    <h2 class="cs-title">How we took Arya Skincare<br>from ₹0 to <em>₹2 crore</em><br>in 90 days.</h2>
+    <p style="font-size:14px;color:var(--stone);line-height:1.8;max-width:420px;margin-bottom:28px">We rebuilt the brand identity, launched CGI-first ad creatives, and ran a full-funnel Meta + Google strategy. The result speaks for itself.</p>
+    <div class="cs-stats">
+      <div class="cs-stat"><div class="cs-sn">3×</div><p class="cs-sl">ROAS in 90 days</p></div>
+      <div class="cs-stat"><div class="cs-sn">₹2Cr</div><p class="cs-sl">Revenue generated</p></div>
+      <div class="cs-stat"><div class="cs-sn">48h</div><p class="cs-sl">Brief to live</p></div>
+    </div>
+    <a href="contact.html" class="bg"><span>Start a similar project</span></a>
+  </div>
+  <div class="cs-r" id="csR">
+    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=1000&q=80" alt="Arya Skincare case study" loading="lazy">
+  </div>
+</section>
+
+<div class="mn-grid">
+  <div class="mn-m"><div class="mn-nw"><div class="mn-n">3×</div></div><p class="mn-l">Average ROAS across all campaigns</p></div>
+  <div class="mn-m"><div class="mn-nw"><div class="mn-n">9+</div></div><p class="mn-l">Brands grown across categories</p></div>
+  <div class="mn-m"><div class="mn-nw"><div class="mn-n">2.3M</div></div><p class="mn-l">Impressions from latest CGI campaign</p></div>
+  <div class="mn-m"><div class="mn-nw"><div class="mn-n">100%</div></div><p class="mn-l">Client retention after 3 months</p></div>
+</div>
+
+<section class="ctas">
+  <p class="eye sr">Your brand next</p>
+  <h2 class="ct-t sr">Ready to build<br>something <em>unmissable?</em></h2>
+  <p class="ct-s sr">We take on a limited number of clients each quarter.</p>
+  <div class="ct-b sr"><div class="mg"><a href="contact.html" class="mgi">Start a project</a></div><a href="services.html" class="bl">Our services →</a></div>
+</section>
+
+<footer><div class="ft">
+  <div><div class="f-logo">mav<span class="e">è</span>n</div><p class="f-tag">Expertise that moves brands.<br>Gurugram, India.</p></div>
+  <div><p class="fc-t">Services</p><ul class="fc-l"><li><a href="services.html">Content Creation (CGI/AR)</a></li><li><a href="services.html">Performance Marketing</a></li><li><a href="services.html">Design & Branding</a></li><li><a href="services.html">Social Media</a></li><li><a href="services.html">Web Development</a></li><li><a href="services.html">Influencer Marketing</a></li></ul></div>
+  <div><p class="fc-t">Company</p><ul class="fc-l"><li><a href="index.html">Home</a></li><li><a href="work.html">Work</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+  <div><p class="fc-t">Contact</p><ul class="fc-l"><li><a href="mailto:support@mavenstudio.agency">support@mavenstudio.agency</a></li><li><a href="#">+91 82744 40987</a></li><li><a href="#">Gurugram, India</a></li><li style="margin-top:12px"><a href="https://www.instagram.com/mavenstudio.in?igsh=MWtldndzcnVnZWVmcg%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a></li><li><a href="#">LinkedIn</a></li></ul></div>
+</div><div class="fb"><p class="fb-c">© <span id="yr"></span> Mavèn Studio.</p><div class="fb-s"><a href="https://www.instagram.com/mavenstudio.in?igsh=MWtldndzcnVnZWVmcg%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a><a href="#">LinkedIn</a></div></div></footer>
+<script src="main.js"></script>
+<script>
+// work filters
+document.querySelectorAll('.wf-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.wf-btn').forEach(b=>b.classList.remove('on'));
+    btn.classList.add('on');
+    const f=btn.dataset.filter;
+    document.querySelectorAll('.wf-item').forEach(item=>{
+      if(f==='all'||item.dataset.cat?.includes(f)){item.style.opacity='1';item.style.pointerEvents='auto'}
+      else{item.style.opacity='0.2';item.style.pointerEvents='none'}
+    });
+  });
+});
+// cs image
+const csR=document.getElementById('csR');
+if(csR)new IntersectionObserver(e=>{if(e[0].isIntersecting)csR.classList.add('in')},{threshold:.2}).observe(csR);
+</script>
+</body>
+</html>

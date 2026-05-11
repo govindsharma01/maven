@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Services — Mavèn Studio</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.svc-full{border-bottom:.5px solid var(--border)}
+.sf-item{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border-bottom:.5px solid var(--border)}
+.sf-item:last-child{border-bottom:none}
+.sf-l{background:var(--ob);padding:100px 64px;display:flex;flex-direction:column;justify-content:center;transition:background .4s}
+.sf-l:hover{background:var(--charcoal)}
+.sf-r{overflow:hidden;position:relative;min-height:480px}
+.sf-r img{transition:transform .8s cubic-bezier(.76,0,.24,1),filter .5s;filter:brightness(.6)}
+.sf-item:hover .sf-r img{transform:scale(1.06);filter:brightness(.45)}
+.sf-r::after{content:'';position:absolute;inset:0;background:rgba(8,8,8,.15)}
+.sf-num{font-family:'Cormorant Garamond',serif;font-size:80px;font-weight:300;color:rgba(200,169,110,.1);line-height:1;margin-bottom:24px;transition:color .4s}
+.sf-item:hover .sf-num{color:rgba(200,169,110,.22)}
+.sf-name{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:500;letter-spacing:-.02em;margin-bottom:20px}
+.sf-desc{font-size:14px;color:var(--stone);line-height:1.8;max-width:440px;margin-bottom:28px}
+.sf-tags{display:flex;gap:8px;flex-wrap:wrap}
+.sf-tag{font-size:10px;color:var(--gold);background:rgba(200,169,110,.08);padding:4px 12px;letter-spacing:.06em;text-transform:uppercase}
+.sf-rev .sf-l{order:2}
+.sf-rev .sf-r{order:1}
+.proc{padding:120px 64px;border-bottom:.5px solid var(--border)}
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-top:72px}
+.ps{background:var(--ob);padding:48px 36px;position:relative;overflow:hidden;transition:background .4s}
+.ps::before{content:'';position:absolute;bottom:0;left:0;right:0;height:1.5px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.76,0,.24,1)}
+.ps:hover{background:var(--charcoal)}
+.ps:hover::before{transform:scaleX(1)}
+.ps-n{font-family:'Cormorant Garamond',serif;font-size:60px;font-weight:300;color:rgba(200,169,110,.1);line-height:1;margin-bottom:28px;transition:color .4s}
+.ps:hover .ps-n{color:rgba(200,169,110,.25)}
+.ps-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;margin-bottom:12px;letter-spacing:-.015em}
+.ps-d{font-size:13px;color:var(--stone);line-height:1.75}
+@media(max-width:900px){
+  .sf-item{grid-template-columns:1fr}
+  .sf-l{padding:60px 24px}
+  .sf-r{min-height:260px}
+  .sf-rev .sf-l,.sf-rev .sf-r{order:unset}
+  .proc{padding:72px 24px}
+  .proc-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<div class="pt"></div>
+<div id="cur"></div><div id="ring"></div>
+<nav>
+  <a href="index.html" class="nl">mav<span class="e">è</span>n<sub>studio</sub></a>
+  <ul class="nv"><li><a href="index.html">Home</a></li><li><a href="services.html" class="on">Services</a></li><li><a href="work.html">Work</a></li><li><a href="contact.html">Contact</a></li></ul>
+  <a href="contact.html" class="nc"><span>Start a project</span></a>
+  <button class="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mm"><a href="index.html">Home</a><a href="services.html">Services</a><a href="work.html">Work</a><a href="contact.html">Contact</a></div>
+
+<section class="ph">
+  <div class="ph-bg" id="phBg">
+    <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1800&q=80" alt="Creative studio" loading="eager">
+  </div>
+  <div class="ph-c">
+    <p class="ph-eye"><span>What we do</span></p>
+    <h1 class="ph-t">
+      <span class="ln"><span class="wd">Six disciplines.</span></span>
+      <span class="ln"><span class="wd">One <em>obsession.</em></span></span>
+    </h1>
+    <p class="ph-d">Every service we offer exists to make your brand the one people remember, choose, and come back to.</p>
+  </div>
+</section>
+
+<div class="mq"><div class="mq-t">
+  <span class="mi">Content Creation</span><span class="ms">✦</span><span class="mi">CGI / AR</span><span class="ms">✦</span><span class="mi">Performance Marketing</span><span class="ms">✦</span><span class="mi">Design & Branding</span><span class="ms">✦</span><span class="mi">Social Media</span><span class="ms">✦</span><span class="mi">Web Development</span><span class="ms">✦</span><span class="mi">Influencer Marketing</span><span class="ms">✦</span>
+  <span class="mi">Content Creation</span><span class="ms">✦</span><span class="mi">CGI / AR</span><span class="ms">✦</span><span class="mi">Performance Marketing</span><span class="ms">✦</span><span class="mi">Design & Branding</span><span class="ms">✦</span><span class="mi">Social Media</span><span class="ms">✦</span><span class="mi">Web Development</span><span class="ms">✦</span><span class="mi">Influencer Marketing</span><span class="ms">✦</span>
+</div></div>
+
+<div class="svc-full">
+  <div class="sf-item sr">
+    <div class="sf-l">
+      <div class="sf-num">01</div>
+      <h2 class="sf-name">Content Creation (CGI/AR)</h2>
+      <p class="sf-desc">We create visuals that didn't exist before — hyper-realistic 3D products, AR experiences, and motion content that stops the scroll and makes people share. In a world of generic stock, we give your brand a visual language entirely its own.</p>
+      <div class="sf-tags"><span class="sf-tag">3D Visualisation</span><span class="sf-tag">CGI Ads</span><span class="sf-tag">AR Filters</span><span class="sf-tag">Motion Graphics</span><span class="sf-tag">Product Animation</span></div>
+    </div>
+    <div class="sf-r"><img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=900&q=80" alt="CGI Content" loading="lazy"></div>
+  </div>
+  <div class="sf-item sf-rev sr">
+    <div class="sf-l">
+      <div class="sf-num">02</div>
+      <h2 class="sf-name">Performance Marketing</h2>
+      <p class="sf-desc">We don't run ads. We build revenue machines. Every campaign is architected around your specific conversion goal. Google, Meta, SEO — all managed by people who eat data for breakfast and report on results, not activity.</p>
+      <div class="sf-tags"><span class="sf-tag">Google Ads</span><span class="sf-tag">Meta Ads</span><span class="sf-tag">SEO / SEM</span><span class="sf-tag">CRO</span><span class="sf-tag">Analytics & Reporting</span></div>
+    </div>
+    <div class="sf-r"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80" alt="Performance Marketing" loading="lazy"></div>
+  </div>
+  <div class="sf-item sr">
+    <div class="sf-l">
+      <div class="sf-num">03</div>
+      <h2 class="sf-name">Design & Branding</h2>
+      <p class="sf-desc">A brand is not a logo — it's a feeling. We build complete visual identities: logo, colour system, typography, photography direction, ad creatives, and everything in between. Consistent, considered, and crafted to last decades.</p>
+      <div class="sf-tags"><span class="sf-tag">Brand Identity</span><span class="sf-tag">Logo Design</span><span class="sf-tag">UI / UX</span><span class="sf-tag">Ad Creatives</span><span class="sf-tag">Brand Guidelines</span></div>
+    </div>
+    <div class="sf-r"><img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=900&q=80" alt="Design and Branding" loading="lazy"></div>
+  </div>
+  <div class="sf-item sf-rev sr">
+    <div class="sf-l">
+      <div class="sf-num">04</div>
+      <h2 class="sf-name">Social Media</h2>
+      <p class="sf-desc">We manage your social presence end-to-end — strategy, calendar, content production, posting, community management, analytics. No ghosting your audience, no copy-pasted captions, no recycled formats. Just content people actually want to see.</p>
+      <div class="sf-tags"><span class="sf-tag">Content Strategy</span><span class="sf-tag">Content Calendar</span><span class="sf-tag">Community Management</span><span class="sf-tag">Instagram / LinkedIn</span><span class="sf-tag">Analytics</span></div>
+    </div>
+    <div class="sf-r"><img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=900&q=80" alt="Social Media" loading="lazy"></div>
+  </div>
+  <div class="sf-item sr">
+    <div class="sf-l">
+      <div class="sf-num">05</div>
+      <h2 class="sf-name">Web Development</h2>
+      <p class="sf-desc">Your website is your highest-performing sales tool — if it's built right. We design and develop fast, beautiful, conversion-optimised websites: landing pages, full brand sites, and e-commerce stores. No templates, no compromises.</p>
+      <div class="sf-tags"><span class="sf-tag">Landing Pages</span><span class="sf-tag">Brand Websites</span><span class="sf-tag">E-commerce</span><span class="sf-tag">CMS</span><span class="sf-tag">Speed & SEO</span></div>
+    </div>
+    <div class="sf-r"><img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=900&q=80" alt="Web Development" loading="lazy"></div>
+  </div>
+  <div class="sf-item sf-rev sr">
+    <div class="sf-l">
+      <div class="sf-num">06</div>
+      <h2 class="sf-name">Influencer Marketing</h2>
+      <p class="sf-desc">We don't just find creators — we find the right ones, brief them properly, and track every campaign to the last rupee. Our influencer campaigns are built around conversion goals, not just reach. Because an audience that doesn't buy isn't an asset.</p>
+      <div class="sf-tags"><span class="sf-tag">Creator Sourcing</span><span class="sf-tag">Campaign Management</span><span class="sf-tag">Content Briefing</span><span class="sf-tag">ROI Tracking</span><span class="sf-tag">Always-On</span></div>
+    </div>
+    <div class="sf-r"><img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=900&q=80" alt="Influencer Marketing" loading="lazy"></div>
+  </div>
+</div>
+
+<section class="proc">
+  <div class="sr"><p class="eye">How we work</p><h2 class="big">Ruthless process.<br><em>Relentless</em> results.</h2></div>
+  <div class="proc-grid">
+    <div class="ps sr"><div class="ps-n">01</div><h3 class="ps-name">Understand</h3><p class="ps-d">Full audit of your brand, market, and competitors before we recommend anything. Strategy always before spending.</p></div>
+    <div class="ps sr sr2"><div class="ps-n">02</div><h3 class="ps-name">Strategise</h3><p class="ps-d">A precise plan — channels, content, budget, timeline. No guesswork, no generic decks. Built for your brand only.</p></div>
+    <div class="ps sr sr3"><div class="ps-n">03</div><h3 class="ps-name">Execute</h3><p class="ps-d">We move fast and with precision. Every deliverable built to perform, not just to check a box.</p></div>
+    <div class="ps sr sr4"><div class="ps-n">04</div><h3 class="ps-name">Optimise</h3><p class="ps-d">We measure everything and improve constantly. The work never stops because your growth never should.</p></div>
+  </div>
+</section>
+
+<div class="mn-grid">
+  <div class="mn-m"><div class="mn-nw"><div class="mn-n">3×</div></div><p class="mn-l">Average ROAS improvement in first 90 days</p></div>
+  <div class="mn-m"><div class="mn-nw"><div class="mn-n">48h</div></div><p class="mn-l">Brief to first campaign live</p></div>
+  <div class="mn-m"><div class="mn-nw"><div class="mn-n">100%</div></div><p class="mn-l">Client retention after 3 months</p></div>
+  <div class="mn-m"><div class="mn-nw"><div class="mn-n">6</div></div><p class="mn-l">Services. One team. Zero gaps.</p></div>
+</div>
+
+<section class="ctas">
+  <p class="eye sr">Ready to start?</p>
+  <h2 class="ct-t sr">Tell us about<br>your <em>brand.</em></h2>
+  <p class="ct-s sr">We take on limited clients each quarter. Let's see if we're the right fit.</p>
+  <div class="ct-b sr"><div class="mg"><a href="contact.html" class="mgi">Start a project</a></div><a href="work.html" class="bl">See our work →</a></div>
+</section>
+
+<footer><div class="ft">
+  <div><div class="f-logo">mav<span class="e">è</span>n</div><p class="f-tag">Expertise that moves brands.<br>Gurugram, India.</p></div>
+  <div><p class="fc-t">Services</p><ul class="fc-l"><li><a href="services.html">Content Creation (CGI/AR)</a></li><li><a href="services.html">Performance Marketing</a></li><li><a href="services.html">Design & Branding</a></li><li><a href="services.html">Social Media</a></li><li><a href="services.html">Web Development</a></li><li><a href="services.html">Influencer Marketing</a></li></ul></div>
+  <div><p class="fc-t">Company</p><ul class="fc-l"><li><a href="index.html">Home</a></li><li><a href="work.html">Work</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+  <div><p class="fc-t">Contact</p><ul class="fc-l"><li><a href="mailto:support@mavenstudio.agency">support@mavenstudio.agency</a></li><li><a href="#">+91 82744 40987</a></li><li><a href="#">Gurugram, India</a></li><li style="margin-top:12px"><a href="https://www.instagram.com/mavenstudio.in?igsh=MWtldndzcnVnZWVmcg%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a></li><li><a href="#">LinkedIn</a></li></ul></div>
+</div><div class="fb"><p class="fb-c">© <span id="yr"></span> Mavèn Studio.</p><div class="fb-s"><a href="https://www.instagram.com/mavenstudio.in?igsh=MWtldndzcnVnZWVmcg%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a><a href="#">LinkedIn</a></div></div></footer>
+<script src="main.js"></script>
+</body>
+</html>
